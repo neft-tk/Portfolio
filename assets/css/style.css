@@ -1,32 +1,61 @@
 /* css reset for the page */
 :root {
-    --firewall-dragon: 120deg, darkblue, silver;
+    --firewall-dragon: 160deg, darkblue, silver;
     --cool-shadow: 5px 5px 5px black;
     --corn: cornflowerblue;
     --ritual: aqua;
     --darkhole: 2px solid black;
     --card: lightgray;
+    --darktext: darkblue;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.body {
+    font-family: sans-serif;
+    background-color: var(--corn);
+    position: relative;
+}
+    
+.body header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(var(--firewall-dragon));
+    border: var(--darkhole);
+    box-shadow: var(--cool-shadow);
+    color: white;
+}
+
+.body header h1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
   }
   
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
-  .body {
-      font-family: sans-serif;
-      background-color: var(--corn);
-    }
-  
-  .body header h1, h2 {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: center;
+nav a {
+    font-size: 120%;
+    color: var(--darktext);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
   }
-  
-  .main {
+
+.main {
     flex: 1;
     background-color: var(--corn);
     padding: 50px;
@@ -34,7 +63,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-  }
+    padding: 175px 20px;
+}
   
   .card {
     background-color: var(--card);
@@ -57,7 +87,7 @@
     z-index: 1;
   }
   
-  .body header:hover, .card:hover, .card h3:hover, footer:hover {
+  .card:hover, .card h3:hover, footer:hover {
     background: linear-gradient(var(--firewall-dragon));
     border: var(--darkhole);
     box-shadow: var(--cool-shadow);
