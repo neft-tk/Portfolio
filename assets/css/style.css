@@ -1,31 +1,33 @@
-/* css reset for the page */
+/* root files/variables */
 :root {
-    --firewall-dragon: 180deg, darkblue, silver;
-    --cool-shadow: 5px 5px 5px black;
-    --cool-shadow-inset: 0 0 10px black inset;
-    --corn: cornflowerblue;
-    --ritual: aqua;
-    --darkhole: 2px solid black;
-    --card: lightgray;
-    --darktext: darkblue;
-    --find-me-red: red;
-    --sidebar-border: 5px solid black;
-  }
+  --firewall-dragon: 180deg, darkblue, silver;
+  --cool-shadow: 5px 5px 5px black;
+  --cool-shadow-inset: 0 0 10px black inset;
+  --corn: cornflowerblue;
+  --ritual: aqua;
+  --darkhole: 2px solid black;
+  --card: lightgray;
+  --darktext: darkblue;
+  --find-me-red: red;
+  --sidebar-border: 5px solid black;
+}
+
+/* css reset for the page */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Body section which makes up most of the content on the page*/
+.body {
+  font-family: sans-serif;
+  background-color: var(--corn);
+  position: relative;
 }
   
-.body {
-    font-family: sans-serif;
-    background-color: var(--corn);
-    position: relative;
-}
-    
 .body header {
-  flex: 1 1 300px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -46,82 +48,43 @@
   margin: 10px;
 }
 
-.body header h2 {
-  justify-content: space-between;
+/* Navigation bar that is fixed on the top of the page with links to different sections on the page and external links */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
-nav {
-  flex: 1 2 300px;
-  max-width: 100%;
-  max-height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  }
-  
 nav a {
-  flex: 1 1 0;
   font-size: 90%;
   color: var(--darktext);
-  padding: 7px 10px;
+  padding: 14px 20px;
   text-decoration: none;
   text-align: center;
-  }
+}
 
+/* Hover psuedo-element that turns the links in .nav blue*/
 nav a:hover {
-    color: var(--ritual);
+  color: var(--ritual);
 }
 
-.portrait {
-  flex-wrap: wrap;
-  display: flex;
-  max-width:100%;
-  max-height:100%;
-  width: auto;
-  height: auto;
-  justify-content: center;
-}
-
-.portrait img {
-  border-radius: 50px;
-  max-width: 50%;
-  max-height: 50%;
-  width: auto;
-  height: auto;
-  flex: 1 1 100px;
-}
-
+/* Larger boxes that will contain the about me section and .card(s) of projects */
 .main {
-    position: relative;
-    flex: 1;
-    background-color: var(--corn);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    padding: 175px 20px;
-}
-
-.main img {
-  display: block;
-  max-width:100%;
-  max-height:100%;
-  width: auto;
-  height: auto;
-  border-radius: 10px;
-  justify-content: center;
-}
-
-.main h1 {
-  justify-content: center;
-  display:wrap;
+  position: relative;
+  flex: 1;
+  background-color: var(--corn);
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .main h2 {
-  font-size: 80%;
+  font-size: 95%;
 }
 
+/* The smaller boxes that contain images and external links to other projects  */
 .card {
   background-color: var(--card);
   border-style: solid;
@@ -129,8 +92,6 @@ nav a:hover {
   border-radius: 10px;
   padding: 5px;
   flex: 1 1 300px;
-  /* transform: rotate(8deg); */
-  /* box-shadow: var(--cool-shadow); */
   margin: 20px;
 }
 
@@ -143,7 +104,13 @@ nav a:hover {
   z-index: 1;
 }
 
+/* ID that lets the image fit the full page */
+#bigcard {
+  width: 100%;
+  flex: 1 1 100%;
+}
 
+/* Resizes images within card so they'll get smaller when the window size gets smaller */
 .card img {
   display: block;
   max-width:100%;
@@ -154,63 +121,67 @@ nav a:hover {
   filter: grayscale(1);
 }
 
+/* Class specifically for my picture and resizing */
+.portrait {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 300px;
+  width: 25%;
+  height: 25%;
+  padding-top: 30vh;
+}
+
+.portrait img {
+  border: 5px solid black;
+  display: block;
+  max-width: 50%;
+  max-height: 50%;
+  width: auto;
+  height: auto;
+  border-radius: 25px;
+}
+
+/* Side bars on the left side of the page with a border on one side*/
 .sidebar {
   flex: 1 1 200px;
-  /* margin-right: 20px; */
   border-right: var(--sidebar-border);
   padding: 200px 100px;
   clear: both;
   float: left;
   width: 10%;
   height: 100%;
-  /* background-color: var(--find-me-red); */
-  /* z-index: 1; */
 }
 
-.card:hover, .card:hover h3, footer:hover {
+/* Hover pseudo-elements for .card, changes the background, moves the .card a little, and removes the grayscale on the images.  */
+.card:hover, .card:hover h3, .card:hover img {
   background: linear-gradient(var(--firewall-dragon));
   border: var(--darkhole);
   box-shadow: var(--cool-shadow);
   color: white;
-  translate: -10px;
+  translate: -5px;
   transition: 1s ease;
-}
-  
-.card:hover img {
   filter: grayscale(0);
-  transition: 1s ease;
 }
 
+/* Active pseudo-element that gives an inset box-shadow when the .card is clicked. */
 .card:active {
-    box-shadow: var(--cool-shadow-inset);
-    transition: 0s;
+  font-size: 80%;
+  box-shadow: var(--cool-shadow-inset);
 }
-  
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 992px) {
-  body header, body header h1, body header h2 {
+  body header h1, h2 {
     width: 100%
   }
 }
-  
+
 @media screen and (max-width: 768px) {
-  header nav {
-    flex-direction: column;
-    justify-content: center;
-  }
+  main {
+    width: 50%
+  }  
 }
-
-#bigcard {
-  width: 100%;
-  flex: 1 1 100%;
-}
-
-#smallcard {
-  width: 50%;
-  flex: 1 1 100%;
-}
-
-#About-Me
-
-#Home
-
-#Various-Projects
