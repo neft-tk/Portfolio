@@ -55,12 +55,13 @@ nav {
   margin-bottom: 10px;
 }
 
+/* Links in these classes will have a different coloring and no underlines. */
 nav a, footer a {
   font-size: 90%;
   color: var(--darktext);
   padding: 14px 20px;
   text-decoration: none;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* Hover psuedo-element that turns the links in .nav blue*/
@@ -183,8 +184,8 @@ nav a:hover, footer a:hover {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
-  height: 300px;
+  justify-content: space-between;
+  height: 200px;
   width: auto;
 }
 
@@ -194,8 +195,23 @@ nav a:hover, footer a:hover {
   }
 }
 
+@media screen and (max-width: 992px) {
+  nav, .footer {
+    flex-direction: column;
+    font-size: 50%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   main {
     width: 50%
   }  
+}
+
+@media screen and (max-width: 768px) {
+  nav a {
+    padding: 1px;
+  }
 }
